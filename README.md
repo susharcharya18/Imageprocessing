@@ -61,5 +61,29 @@ print("Height",image.height)<br>
 image.close();<br>
 output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/173815295-6f31699b-4609-44e8-9210-3bb4319a013e.png)<br>
+8)Convert the original image to gray scale and then to binary 
+import cv2
+#read the image file
+img=cv2.imread("flw22.jpg")
+cv2.imshow("RGB",img)
+cv2.waitKey(0)
+#gray scale
+img=cv2.imread("flw22.jpg",0)
+cv2.imshow("gray",img)
+cv2.waitKey(0)
+#binary image
+ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+cv2.imshow("BINARY",bw_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+![image](https://user-images.githubusercontent.com/97939356/174044748-26dfcc90-888b-4c63-abc3-853fd35d4ce4.png)
+![image](https://user-images.githubusercontent.com/97939356/174045047-19658c38-e426-4b83-9d5a-1d2c2ef158c2.png)
+![image](https://user-images.githubusercontent.com/97939356/174045302-fde2d346-0049-49a8-8da3-7c63501b68c8.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)
+
 
 
