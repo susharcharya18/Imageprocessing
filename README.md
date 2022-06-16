@@ -61,29 +61,36 @@ print("Height",image.height)<br>
 image.close();<br>
 output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/173815295-6f31699b-4609-44e8-9210-3bb4319a013e.png)<br>
-8)Convert the original image to gray scale and then to binary 
-import cv2
-#read the image file
-img=cv2.imread("flw22.jpg")
-cv2.imshow("RGB",img)
-cv2.waitKey(0)
-#gray scale
-img=cv2.imread("flw22.jpg",0)
-cv2.imshow("gray",img)
-cv2.waitKey(0)
-#binary image
-ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)
-cv2.imshow("BINARY",bw_img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-![image](https://user-images.githubusercontent.com/97939356/174044748-26dfcc90-888b-4c63-abc3-853fd35d4ce4.png)
-![image](https://user-images.githubusercontent.com/97939356/174045047-19658c38-e426-4b83-9d5a-1d2c2ef158c2.png)
-![image](https://user-images.githubusercontent.com/97939356/174045302-fde2d346-0049-49a8-8da3-7c63501b68c8.png)
-
-
-
-
-![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)
+8)Convert the original image to gray scale and then to binary<br>
+import cv2<br>
+#read the image file<br>
+img=cv2.imread("flw22.jpg")<br>
+cv2.imshow("RGB",img)<br>
+cv2.waitKey(0)<br>
+#gray scale<br>
+img=cv2.imread("flw22.jpg",0)<br>
+cv2.imshow("gray",img)<br>
+cv2.waitKey(0)<br>
+#binary image<br>
+ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)<br>
+cv2.imshow("BINARY",bw_img)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+![image](https://user-images.githubusercontent.com/97939356/174044748-26dfcc90-888b-4c63-abc3-853fd35d4ce4.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/174045047-19658c38-e426-4b83-9d5a-1d2c2ef158c2.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/174045302-fde2d346-0049-49a8-8da3-7c63501b68c8.png)<br>
+9)Resize the original image<br>
+import cv2<br>
+img=cv2.imread('flw22.jpg')<br>
+print('original image length width',img.shape)<br>
+cv2.imshow('original image',img)<br>
+cv2.waitKey(0)<br>
+#to show the resized image<br>
+imgresize=cv2.resize(img,(150,160))<br>
+cv2.imshow('resized image',imgresize)<br>
+print('Resized image length width',imgresize.shape)<br>
+cv2.waitKey(0)<br>
+![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)<br>
 
 
 
