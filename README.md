@@ -195,18 +195,18 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97939356/175264441-34c44e75-96e6-4132-99e7-70cb8f6148c1.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/175265162-149969a5-fb00-4ab4-bbf9-df224b75cf99.png)<br>
 
-#program to create an image using 2D array
-import cv2 as c
-import numpy as np
-from PIL import Image
-array=np.zeros([100,200,3],dtype=np.uint8)
-array[:,:100]=[255,130,0]
-array[:,100:]=[0,0,255]
-img=Image.fromarray(array)
-img.save('')
-img.show()
-c.waitKey(0)
-![image](https://user-images.githubusercontent.com/97939356/175266876-0b317fda-3933-4a08-8532-51ce9dac7c1c.png)
+#program to create an image using 2D array<br>
+import cv2 as c<br>
+import numpy as np<br>
+from PIL import Image<br>
+array=np.zeros([100,200,3],dtype=np.uint8)<br>
+array[:,:100]=[255,130,0]<br>
+array[:,100:]=[0,0,255]<br>
+img=Image.fromarray(array)<br>
+img.save('flw4.jpg')<br>
+img.show()<br>
+c.waitKey(0)<br>
+![image](https://user-images.githubusercontent.com/97939356/175266876-0b317fda-3933-4a08-8532-51ce9dac7c1c.png)<br>
 
 
 
