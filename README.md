@@ -91,109 +91,109 @@ cv2.imshow('resized image',imgresize)<br>
 print('Resized image length width',imgresize.shape)<br>
 cv2.waitKey(0)<br>
 ![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)<br>
-#develop a program to readimage using URL
-from skimage import io
-import matplotlib.pyplot as plt
-url='https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2019/08/08/Pictures/_6bda0940-b9ad-11e9-98cb-e738ad509720.jpg'
-image=io.imread(url)
-plt.imshow(image)
-plt.show()
-output:
-![image](https://user-images.githubusercontent.com/97939356/175019563-1ef4c35d-eefc-4fcd-b4d8-536d10c3351b.png)
+#develop a program to readimage using URL<br>
+from skimage import io<br>
+import matplotlib.pyplot as plt<br>
+url='https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2019/08/08/Pictures/_6bda0940-b9ad-11e9-98cb-e738ad509720.jpg'<br>
+image=io.imread(url)<br>
+plt.imshow(image)<br>
+plt.show()<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/175019563-1ef4c35d-eefc-4fcd-b4d8-536d10c3351b.png)<br>
 import cv2
-import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
-#reading image files
-img1=cv2.imread('bf1.jpg')
-img2=cv2.imread('bf3.jpg')
-#applying numpy addition on images
-fimg1=img1+img2
-plt.imshow(fimg1)
-plt.show()
-#saving the outout image
-cv2.imwrite('output.jpg',fimg1)
-fimg2=img1-img2
-plt.imshow(fimg2)
-plt.show()
-#saving the outout image
-cv2.imwrite('output.jpg',fimg2)
-fimg3=img1*img2
-plt.imshow(fimg3)
-plt.show()
-#saving the outout image
-cv2.imwrite('output.jpg',fimg3)
-fimg4=img1/img2
-plt.imshow(fimg4)
-plt.show()
-#saving the outout image
-cv2.imwrite('output.jpg',fimg4)
-1)![image](https://user-images.githubusercontent.com/97939356/175019733-b02ac822-3e74-4e0d-bf6c-cfe6fe70d17b.png)
-2)![image](https://user-images.githubusercontent.com/97939356/175019810-a4738a4a-b4e4-4310-b99f-3c67090277b9.png)
-3)![image](https://user-images.githubusercontent.com/97939356/175019905-57359335-99a4-4031-9f61-dc171bfc86dc.png)
-4)![image](https://user-images.githubusercontent.com/97939356/175019986-237aa09f-a0dc-47cd-af68-94212b230495.png)
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
+#reading image files<br>
+img1=cv2.imread('bf1.jpg')<br>
+img2=cv2.imread('bf3.jpg')<br>
+#applying numpy addition on images<br>
+fimg1=img1+img2<br>
+plt.imshow(fimg1)<br>
+plt.show()<br>
+#saving the outout image<br>
+cv2.imwrite('output.jpg',fimg1)<br>
+fimg2=img1-img2<br>
+plt.imshow(fimg2)<br>
+plt.show()<br>
+#saving the outout image<br>
+cv2.imwrite('output.jpg',fimg2)<br>
+fimg3=img1*img2<br>
+plt.imshow(fimg3)<br>
+plt.show()<br>
+#saving the outout image<br>
+cv2.imwrite('output.jpg',fimg3)<br>
+fimg4=img1/img2<br>
+plt.imshow(fimg4)<br>
+plt.show()<br>
+#saving the outout image<br>
+cv2.imwrite('output.jpg',fimg4)<br>
+1)![image](https://user-images.githubusercontent.com/97939356/175019733-b02ac822-3e74-4e0d-bf6c-cfe6fe70d17b.png)<br>
+2)![image](https://user-images.githubusercontent.com/97939356/175019810-a4738a4a-b4e4-4310-b99f-3c67090277b9.png)<br>
+3)![image](https://user-images.githubusercontent.com/97939356/175019905-57359335-99a4-4031-9f61-dc171bfc86dc.png)<br>
+4)![image](https://user-images.githubusercontent.com/97939356/175019986-237aa09f-a0dc-47cd-af68-94212b230495.png)<br>
 
-#write a program to mask and blur the image 
-import cv2
-import matplotlib.image as mping
-import matplotlib.pyplot as plt
-img=mping.imread('bf55.jpg')
-plt.imshow(img)
-plt.show()
-![image](https://user-images.githubusercontent.com/97939356/175020094-8dcc0acd-4d36-47f4-9ba7-6c7b75d40479.png)
-hsv_img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
-light_orange=(1,190,200)
-dark_orange=(18,255,255)
-mask=cv2.inRange(hsv_img,light_orange,dark_orange)
-result=cv2.bitwise_and(img,img,mask=mask)
-plt.subplot(1,2,1)
-plt.imshow(mask,cmap="gray")
-plt.subplot(1,2,2)
-plt.imshow(result)
-plt.show()
-![image](https://user-images.githubusercontent.com/97939356/175020213-da03bde8-8c74-4ddb-976c-63f7ec657714.png)
-light_white=(0,0,200)
-dark_white=(145,60,255)
-mask_white=cv2.inRange(hsv_img,light_white,dark_white)
-result_white=cv2.bitwise_and(img,img,mask=mask)
-plt.subplot(1,2,1)
-plt.imshow(mask_white,cmap="gray")
-plt.subplot(1,2,2)
-plt.imshow(result_white)
-plt.show()
-![image](https://user-images.githubusercontent.com/97939356/175020311-4e0bf448-7b05-4807-9f1c-ea003ed934f3.png)
-final_mask=mask+mask_white
-final_result=cv2.bitwise_and(img,img,mask=final_mask)
-plt.subplot(1,2,1)
-plt.imshow(final_mask,cmap="gray")
-plt.subplot(1,2,2)
-plt.imshow(final_mask)
-plt.show()
-![image](https://user-images.githubusercontent.com/97939356/175020431-3b05d13d-3fd0-4c05-b19d-74fe7b60f0c0.png)
-blur=cv2.GaussianBlur(final_result,(7,7),0)
-plt.imshow(blur)
-plt.show()
-![image](https://user-images.githubusercontent.com/97939356/175020540-fe6a5323-a391-4dbe-b705-0c8e9a38f1a3.png)
+#write a program to mask and blur the image <br>
+import cv2<br>
+import matplotlib.image as mping<br>
+import matplotlib.pyplot as plt<br>
+img=mping.imread('bf55.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97939356/175020094-8dcc0acd-4d36-47f4-9ba7-6c7b75d40479.png)<br>
+hsv_img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)<br>
+light_orange=(1,190,200)<br>
+dark_orange=(18,255,255)<br>
+mask=cv2.inRange(hsv_img,light_orange,dark_orange)<br>
+result=cv2.bitwise_and(img,img,mask=mask)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(mask,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(result)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97939356/175020213-da03bde8-8c74-4ddb-976c-63f7ec657714.png)<br>
+light_white=(0,0,200)<br>
+dark_white=(145,60,255)<br>
+mask_white=cv2.inRange(hsv_img,light_white,dark_white)<br>
+result_white=cv2.bitwise_and(img,img,mask=mask)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(mask_white,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(result_white)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97939356/175020311-4e0bf448-7b05-4807-9f1c-ea003ed934f3.png)<br>
+final_mask=mask+mask_white<br>
+final_result=cv2.bitwise_and(img,img,mask=final_mask)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(final_mask,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(final_mask)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97939356/175020431-3b05d13d-3fd0-4c05-b19d-74fe7b60f0c0.png)<br>
+blur=cv2.GaussianBlur(final_result,(7,7),0)<br>
+plt.imshow(blur)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97939356/175020540-fe6a5323-a391-4dbe-b705-0c8e9a38f1a3.png)<br>
 
-#develop the program to change the image to different color space
-import cv2 
-img=cv2.imread("bf1.jpg")
-gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)
-hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)
-yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)
-cv2.imshow("GRAY image",gray)
-cv2.imshow("HSV image",hsv)
-cv2.imshow("LAB image",lab)
-cv2.imshow("HLS image",hls)
-cv2.imshow("YUV image",yuv)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-![image](https://user-images.githubusercontent.com/97939356/175263981-f61e0c85-07d2-48e3-9ace-ba221ba6ff72.png)
-![image](https://user-images.githubusercontent.com/97939356/175264136-a71009b9-93cf-45bf-a177-5b1a469e8658.png)
-![image](https://user-images.githubusercontent.com/97939356/175264337-20846ea4-c8ea-4c9a-b5da-ce30f19ff8a0.png)
-![image](https://user-images.githubusercontent.com/97939356/175264441-34c44e75-96e6-4132-99e7-70cb8f6148c1.png)
-![image](https://user-images.githubusercontent.com/97939356/175265162-149969a5-fb00-4ab4-bbf9-df224b75cf99.png)
+#develop the program to change the image to different color space<br>
+import cv2 <br>
+img=cv2.imread("bf1.jpg")<br>
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)<br>
+lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)<br>
+hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)<br>
+yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)<br>
+cv2.imshow("GRAY image",gray)<br>
+cv2.imshow("HSV image",hsv)<br>
+cv2.imshow("LAB image",lab)<br>
+cv2.imshow("HLS image",hls)<br>
+cv2.imshow("YUV image",yuv)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+![image](https://user-images.githubusercontent.com/97939356/175263981-f61e0c85-07d2-48e3-9ace-ba221ba6ff72.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/175264136-a71009b9-93cf-45bf-a177-5b1a469e8658.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/175264337-20846ea4-c8ea-4c9a-b5da-ce30f19ff8a0.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/175264441-34c44e75-96e6-4132-99e7-70cb8f6148c1.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/175265162-149969a5-fb00-4ab4-bbf9-df224b75cf99.png)<br>
 
 
 
