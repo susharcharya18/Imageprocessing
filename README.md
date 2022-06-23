@@ -76,6 +76,7 @@ ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)<br>
 cv2.imshow("BINARY",bw_img)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
+output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/174044748-26dfcc90-888b-4c63-abc3-853fd35d4ce4.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/174045047-19658c38-e426-4b83-9d5a-1d2c2ef158c2.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/174045302-fde2d346-0049-49a8-8da3-7c63501b68c8.png)<br>
@@ -90,6 +91,7 @@ imgresize=cv2.resize(img,(150,160))<br>
 cv2.imshow('resized image',imgresize)<br>
 print('Resized image length width',imgresize.shape)<br>
 cv2.waitKey(0)<br>
+output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)<br>
 10)develop a program to readimage using URL<br>
 from skimage import io<br>
@@ -128,11 +130,11 @@ plt.imshow(fimg4)<br>
 plt.show()<br>
 #saving the outout image<br>
 cv2.imwrite('output.jpg',fimg4)<br>
+output:<br>
 1)![image](https://user-images.githubusercontent.com/97939356/175019733-b02ac822-3e74-4e0d-bf6c-cfe6fe70d17b.png)<br>
 2)![image](https://user-images.githubusercontent.com/97939356/175019810-a4738a4a-b4e4-4310-b99f-3c67090277b9.png)<br>
 3)![image](https://user-images.githubusercontent.com/97939356/175019905-57359335-99a4-4031-9f61-dc171bfc86dc.png)<br>
 4)![image](https://user-images.githubusercontent.com/97939356/175019986-237aa09f-a0dc-47cd-af68-94212b230495.png)<br>
-
 12)Wite a program to mask and blur the image <br>
 import cv2<br>
 import matplotlib.image as mping<br>
@@ -174,7 +176,6 @@ blur=cv2.GaussianBlur(final_result,(7,7),0)<br>
 plt.imshow(blur)<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97939356/175020540-fe6a5323-a391-4dbe-b705-0c8e9a38f1a3.png)<br>
-
 13)develop the program to change the image to different color space<br>
 import cv2 <br>
 img=cv2.imread("bf1.jpg")<br>
@@ -190,12 +191,12 @@ cv2.imshow("HLS image",hls)<br>
 cv2.imshow("YUV image",yuv)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
+output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/175263981-f61e0c85-07d2-48e3-9ace-ba221ba6ff72.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/175264136-a71009b9-93cf-45bf-a177-5b1a469e8658.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/175264337-20846ea4-c8ea-4c9a-b5da-ce30f19ff8a0.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/175264441-34c44e75-96e6-4132-99e7-70cb8f6148c1.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/175265162-149969a5-fb00-4ab4-bbf9-df224b75cf99.png)<br>
-
 14)program to create an image using 2D array<br>
 import cv2 as c<br>
 import numpy as np<br>
@@ -207,6 +208,7 @@ img=Image.fromarray(array)<br>
 img.save('flw4.jpg')<br>
 img.show()<br>
 c.waitKey(0)<br>
+output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/175266876-0b317fda-3933-4a08-8532-51ce9dac7c1c.png)<br>
 
 
