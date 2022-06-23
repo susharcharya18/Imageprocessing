@@ -91,7 +91,7 @@ cv2.imshow('resized image',imgresize)<br>
 print('Resized image length width',imgresize.shape)<br>
 cv2.waitKey(0)<br>
 ![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)<br>
-#develop a program to readimage using URL<br>
+10)develop a program to readimage using URL<br>
 from skimage import io<br>
 import matplotlib.pyplot as plt<br>
 url='https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2019/08/08/Pictures/_6bda0940-b9ad-11e9-98cb-e738ad509720.jpg'<br>
@@ -100,6 +100,7 @@ plt.imshow(image)<br>
 plt.show()<br>
 output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/175019563-1ef4c35d-eefc-4fcd-b4d8-536d10c3351b.png)<br>
+11)Write a program to perform arithematic operation on images
 import cv2
 import matplotlib.image as mpimg<br>
 import matplotlib.pyplot as plt<br>
@@ -132,7 +133,7 @@ cv2.imwrite('output.jpg',fimg4)<br>
 3)![image](https://user-images.githubusercontent.com/97939356/175019905-57359335-99a4-4031-9f61-dc171bfc86dc.png)<br>
 4)![image](https://user-images.githubusercontent.com/97939356/175019986-237aa09f-a0dc-47cd-af68-94212b230495.png)<br>
 
-#write a program to mask and blur the image <br>
+12)Wite a program to mask and blur the image <br>
 import cv2<br>
 import matplotlib.image as mping<br>
 import matplotlib.pyplot as plt<br>
@@ -174,7 +175,7 @@ plt.imshow(blur)<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97939356/175020540-fe6a5323-a391-4dbe-b705-0c8e9a38f1a3.png)<br>
 
-#develop the program to change the image to different color space<br>
+13)develop the program to change the image to different color space<br>
 import cv2 <br>
 img=cv2.imread("bf1.jpg")<br>
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
@@ -195,7 +196,7 @@ cv2.destroyAllWindows()<br>
 ![image](https://user-images.githubusercontent.com/97939356/175264441-34c44e75-96e6-4132-99e7-70cb8f6148c1.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/175265162-149969a5-fb00-4ab4-bbf9-df224b75cf99.png)<br>
 
-#program to create an image using 2D array<br>
+14)program to create an image using 2D array<br>
 import cv2 as c<br>
 import numpy as np<br>
 from PIL import Image<br>
