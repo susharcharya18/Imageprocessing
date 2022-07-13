@@ -212,6 +212,43 @@ output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/175266876-0b317fda-3933-4a08-8532-51ce9dac7c1c.png)<br>
 
 
+import cv2
+OriginalImg=cv2.imread('flo1.jpg')
+GrayImg=cv2.imread('flo1.jpg',0)
+isSaved=cv2.imwrite('C:/i.jpg',GrayImg)
+cv2.imshow('Display Original Image',OriginalImg)
+cv2.imshow('Display Grayscale Image',GrayImg)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+if isSaved:
+    print('The Image is successfully saved')
+    OUTPUT:
+    ![image](https://user-images.githubusercontent.com/97939356/178699172-4f8be175-c60b-42c3-913f-583ce7482dae.png)
+    ![image](https://user-images.githubusercontent.com/97939356/178699314-dfe58cc5-989f-41de-8e8e-fc7da3d1cd37.png)
+    
+    
+    import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+image=cv2.imread('bf1.jpg',0)
+x,y=image.shape
+z=np.zeros((x,y))
+for i in range(0,x):
+    for j in range(0,y):
+        if(image[i][j]>50 and image[i][j]<150):
+            z[i][j]=255
+        else:
+            z[i][j]=image[i][j]
+equ=np.hstack((image,z))
+plt.title('Graylevel slicing with background')
+plt.imshow(equ,'gray')
+plt.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/178703256-2f841cde-b8d8-43bd-946e-d81b8e4be626.png)
+
+    
+
+
 
 
 
