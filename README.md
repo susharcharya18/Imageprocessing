@@ -211,171 +211,157 @@ c.waitKey(0)<br>
 output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/175266876-0b317fda-3933-4a08-8532-51ce9dac7c1c.png)<br>
 
-import cv2
-import matplotlib.pyplot as plt
-image1=cv2.imread('PL1.jpg',1)
-image2=cv2.imread('PL1.jpg')
-ax=plt.subplots(figsize=(15,10))
-bitwiseAND=cv2.bitwise_and(image1,image2)
-bitwiseOR=cv2.bitwise_or(image1,image2)
-bitwiseXOR=cv2.bitwise_xor(image1,image2)
-bitwiseNot_img1=cv2.bitwise_not(image1)
-bitwiseNot_img2=cv2.bitwise_not(image2)
-plt.subplot(151)
-plt.imshow(bitwiseAND)
-plt.subplot(152)
-plt.imshow(bitwiseOR)
-plt.subplot(153)
-plt.imshow(bitwiseXOR)
-plt.subplot(154)
-plt.imshow(bitwiseNot_img1)
-plt.subplot(155)
-plt.imshow(bitwiseNot_img2)
-cv2.waitKey(0)
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/178717045-bca14314-5112-4f3a-92fa-0e2061ff77ca.png)
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+image1=cv2.imread('PL1.jpg',1)<br>
+image2=cv2.imread('PL1.jpg')<br>
+ax=plt.subplots(figsize=(15,10))<br>
+bitwiseAND=cv2.bitwise_and(image1,image2)<br>
+bitwiseOR=cv2.bitwise_or(image1,image2)<br>
+bitwiseXOR=cv2.bitwise_xor(image1,image2)<br>
+bitwiseNot_img1=cv2.bitwise_not(image1)<br>
+bitwiseNot_img2=cv2.bitwise_not(image2)<br>
+plt.subplot(151)<br>
+plt.imshow(bitwiseAND)<br>
+plt.subplot(152)<br>
+plt.imshow(bitwiseOR)<br>
+plt.subplot(153)<br>
+plt.imshow(bitwiseXOR)<br>
+plt.subplot(154)<br>
+plt.imshow(bitwiseNot_img1)<br>
+plt.subplot(155)<br>
+plt.imshow(bitwiseNot_img2)<br>
+cv2.waitKey(0)<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/178717045-bca14314-5112-4f3a-92fa-0e2061ff77ca.png)<br>
 
-#importing libraries
-import cv2
-import numpy as np
-image=cv2.imread('flo3.jpg')
-cv2.imshow('Original Image',image)
-cv2.waitKey(0)
-#Gaussian Blur
-Gaussian=cv2.GaussianBlur(image,(7,7),0)
-cv2.imshow('Gaussian Blurring',Gaussian)
-#Median BLUR
-median=cv2.medianBlur(image,5)
-cv2.imshow('Median Blurring',median)
-cv2.waitKey(0)
-#Bilateral Blur
-bilateral=cv2.bilateralFilter(image,9,75,75)
-cv2.imshow('Bilateral Blurring',bilateral)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/178717202-0bac06a0-73ae-4374-895a-ebc317aa0b2f.png)
-![image](https://user-images.githubusercontent.com/97939356/178717276-eb1bee96-23db-4457-8ebd-46ea8cfc1360.png)
-![image](https://user-images.githubusercontent.com/97939356/178717375-af5cbaac-1736-4029-94ab-c963ae2fc247.png)
-![image](https://user-images.githubusercontent.com/97939356/178717436-2b4a70fd-bbf5-46cf-bdce-5e8f6a49eddf.png)
+#importing libraries<br>
+import cv2<br>
+import numpy as np<br>
+image=cv2.imread('flo3.jpg')<br>
+cv2.imshow('Original Image',image)<br>
+cv2.waitKey(0)<br>
+#Gaussian Blur<br>
+Gaussian=cv2.GaussianBlur(image,(7,7),0)<br>
+cv2.imshow('Gaussian Blurring',Gaussian)<br>
+#Median BLUR<br>
+median=cv2.medianBlur(image,5)<br>
+cv2.imshow('Median Blurring',median)<br>
+cv2.waitKey(0)<br>
+#Bilateral Blur<br>
+bilateral=cv2.bilateralFilter(image,9,75,75)<br>
+cv2.imshow('Bilateral Blurring',bilateral)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/178717202-0bac06a0-73ae-4374-895a-ebc317aa0b2f.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178717276-eb1bee96-23db-4457-8ebd-46ea8cfc1360.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178717375-af5cbaac-1736-4029-94ab-c963ae2fc247.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178717436-2b4a70fd-bbf5-46cf-bdce-5e8f6a49eddf.png)<br>
 
-from PIL import Image
-from PIL import ImageEnhance
-image=Image.open('flo4.jpg')
-image.show()
-enh_bri=ImageEnhance.Brightness(image)
-brightness=1.5
-image_brightened=enh_bri.enhance(brightness)
-image_brightened.show()
-enh_col=ImageEnhance.Color(image)
-color=1.5
-image_colored=enh_col.enhance(color)
-image_colored.show()
-enh_con=ImageEnhance.Contrast(image)
-color=1.5
-image_Contrasted=enh_con.enhance(color)
-image_Contrasted.show()
-enh_sha=ImageEnhance.Sharpness(image)
-Sharpness=1.0
-image_Sharped=enh_con.enhance(color)
-image_Sharped.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/178719513-907f72c9-1ef2-4305-844f-fd09ed52072f.png)
-![image](https://user-images.githubusercontent.com/97939356/178719602-918ad3a4-f90e-4462-b465-510ad9ff0883.png)
-![image](https://user-images.githubusercontent.com/97939356/178719678-56c0cda4-2f96-4e8e-b620-737d62524d18.png)
-![image](https://user-images.githubusercontent.com/97939356/178719742-f652d2d8-b728-4be0-bbb4-8ad69682d645.png)
-![image](https://user-images.githubusercontent.com/97939356/178719794-a2af0071-79b1-43b5-af6b-baf6aac6a719.png)
+from PIL import Image<br>
+from PIL import ImageEnhance<br>
+image=Image.open('flo4.jpg')<br>
+image.show()<br>
+enh_bri=ImageEnhance.Brightness(image)<br>
+brightness=1.5<br>
+image_brightened=enh_bri.enhance(brightness)<br>
+image_brightened.show()<br>
+enh_col=ImageEnhance.Color(image)<br>
+color=1.5<br>
+image_colored=enh_col.enhance(color)<br>
+image_colored.show()<br>
+enh_con=ImageEnhance.Contrast(image)<br>
+color=1.5<br>
+image_Contrasted=enh_con.enhance(color)<br>
+image_Contrasted.show()<br>
+enh_sha=ImageEnhance.Sharpness(image)<br>
+Sharpness=1.0<br>
+image_Sharped=enh_con.enhance(color)<br>
+image_Sharped.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/178719513-907f72c9-1ef2-4305-844f-fd09ed52072f.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178719602-918ad3a4-f90e-4462-b465-510ad9ff0883.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178719678-56c0cda4-2f96-4e8e-b620-737d62524d18.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178719742-f652d2d8-b728-4be0-bbb4-8ad69682d645.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178719794-a2af0071-79b1-43b5-af6b-baf6aac6a719.png)<br>
 
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
-from PIL import Image,ImageEnhance
-img=cv2.imread('bf3.jpg',0)
-azx=plt.subplots(figsize=(20,10))
-kernel=np.ones((5,5),np.uint8)
-opening=cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)
-closing=cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)
-erosion=cv2.erode(img,kernel,iterations=1)
-dilation=cv2.dilate(img,kernel,iterations=1)
-gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)
-plt.subplot(151)
-plt.imshow(opening)
-plt.subplot(152)
-plt.imshow(closing)
-plt.subplot(153)
-plt.imshow(erosion)
-plt.subplot(154)
-plt.imshow(dilation)
-plt.subplot(155)
-plt.imshow(gradient)
-cv2.waitKey(0)
-output:
-![image](https://user-images.githubusercontent.com/97939356/178719059-90fbfaed-87c0-40e0-a416-17ab931f4df4.png)
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+from PIL import Image,ImageEnhance<br>
+img=cv2.imread('bf3.jpg',0)<br>
+azx=plt.subplots(figsize=(20,10))<br>
+kernel=np.ones((5,5),np.uint8)<br>
+opening=cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)<br>
+closing=cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)<br>
+erosion=cv2.erode(img,kernel,iterations=1)<br>
+dilation=cv2.dilate(img,kernel,iterations=1)<br>
+gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)<br>
+plt.subplot(151)<br>
+plt.imshow(opening)<br>
+plt.subplot(152)<br>
+plt.imshow(closing)<br>
+plt.subplot(153)<br>
+plt.imshow(erosion)<br>
+plt.subplot(154)<br>
+plt.imshow(dilation)<br>
+plt.subplot(155)<br>
+plt.imshow(gradient)<br>
+cv2.waitKey(0)<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/178719059-90fbfaed-87c0-40e0-a416-17ab931f4df4.png)<br>
 
 
-import cv2
-OriginalImg=cv2.imread('flo1.jpg')
-GrayImg=cv2.imread('flo1.jpg',0)
-isSaved=cv2.imwrite('C:/i.jpg',GrayImg)
-cv2.imshow('Display Original Image',OriginalImg)
-cv2.imshow('Display Grayscale Image',GrayImg)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-if isSaved:
-    print('The Image is successfully saved')
-    OUTPUT:
-    ![image](https://user-images.githubusercontent.com/97939356/178699172-4f8be175-c60b-42c3-913f-583ce7482dae.png)
-    ![image](https://user-images.githubusercontent.com/97939356/178699314-dfe58cc5-989f-41de-8e8e-fc7da3d1cd37.png)
+import cv2<br>
+OriginalImg=cv2.imread('flo1.jpg')<br>
+GrayImg=cv2.imread('flo1.jpg',0)<br>
+isSaved=cv2.imwrite('C:/i.jpg',GrayImg)<br>
+cv2.imshow('Display Original Image',OriginalImg)<br>
+cv2.imshow('Display Grayscale Image',GrayImg)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+if isSaved:<br>
+    print('The Image is successfully saved')<br>
+    OUTPUT:<br>
+    ![image](https://user-images.githubusercontent.com/97939356/178699172-4f8be175-c60b-42c3-913f-583ce7482dae.png)<br>
+    ![image](https://user-images.githubusercontent.com/97939356/178699314-dfe58cc5-989f-41de-8e8e-fc7da3d1cd37.png)<br>
    
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
-image=cv2.imread('bf1.jpg',0)
-x,y=image.shape
-z=np.zeros((x,y))
-for i in range(0,x):
-    for j in range(0,y):
-        if(image[i][j]>50 and image[i][j]<150):
-            z[i][j]=255
-        else:
-            z[i][j]=image[i][j]
-equ=np.hstack((image,z))
-plt.title('Graylevel slicing with background')
-plt.imshow(equ,'gray')
-plt.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/178703256-2f841cde-b8d8-43bd-946e-d81b8e4be626.png)
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('bf1.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=image[i][j]<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/178703256-2f841cde-b8d8-43bd-946e-d81b8e4be626.png)<br>
 
-    
-
-import cv2
-import numpy as np
-from matplotlib import pyplot as plt
-image=cv2.imread('bf2.jpg',0)
-x,y=image.shape
-z=np.zeros((x,y))
-for i in range(0,x):
-    for j in range(0,y):
-        if(image[i][j]>50 and image[i][j]<150):
-            z[i][j]=255
-        else:
-            z[i][j]=0
-equ=np.hstack((image,z))
-plt.title('Graylevel slicing with background')
-plt.imshow(equ,'gray')
-plt.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/178704124-234cd9ce-e2bc-4719-aca9-63b4ab6b4fee.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('bf2.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=0<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/178704124-234cd9ce-e2bc-4719-aca9-63b4ab6b4fee.png)<br>
+Finished
