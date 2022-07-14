@@ -365,41 +365,41 @@ plt.show()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97939356/178704124-234cd9ce-e2bc-4719-aca9-63b4ab6b4fee.png)<br>
 
-import numpy as np
-import skimage.color
-import skimage.io
-import matplotlib.pyplot as plt
-#matplotlib widget
+import numpy as np<br>
+import skimage.color<br>
+import skimage.io<br>
+import matplotlib.pyplot as plt<br>
+#matplotlib widget<br>
 
-#read the image of a plant seedling as grayscale from the outset
-image = skimage.io.imread(fname="img3.jpg", as_gray=True)
-image1 = skimage.io.imread(fname="img3.jpg")
-#display the image
-fig, ax = plt.subplots()
-plt.imshow(image, cmap="gray")
-plt.show()
+#read the image of a plant seedling as grayscale from the outset<br>
+image = skimage.io.imread(fname="img3.jpg", as_gray=True)<br>
+image1 = skimage.io.imread(fname="img3.jpg")<br>
+#display the image<br>
+fig, ax = plt.subplots()<br>
+plt.imshow(image, cmap="gray")<br>
+plt.show()<br>
 
-#display the image
-fig, ax = plt.subplots()
-plt.imshow(image1, cmap="gray")
-plt.show()
+#display the image<br>
+fig, ax = plt.subplots()<br>
+plt.imshow(image1, cmap="gray")<br>
+plt.show()<br>
 
-#create the histogram
-histogram, bin_edges = np.histogram(image, bins=256, range=(0, 1))
+#create the histogram<br>
+histogram, bin_edges = np.histogram(image, bins=256, range=(0, 1))<br>
 
-#configure and draw the histogram figure
-plt.figure()
-plt.title("Grayscale Histogram")
-plt.xlabel("grayscale value")
-plt.ylabel("pixel count")
-plt.xlim([0.0, 1.0]) # <- named arguments do not work here
+#configure and draw the histogram figure<br>
+plt.figure()<br>
+plt.title("Grayscale Histogram")<br>
+plt.xlabel("grayscale value")<br>
+plt.ylabel("pixel count")<br>
+plt.xlim([0.0, 1.0]) # <- named arguments do not work here<br>
 
-plt.plot(bin_edges[0:-1], histogram) # <- or here
-plt.show()
-output:
-![image](https://user-images.githubusercontent.com/97939356/178964931-4c5ea6de-259b-412d-b070-dd10538bf680.png)
-![image](https://user-images.githubusercontent.com/97939356/178965018-e77ead41-848a-466a-9968-f36ba941608c.png)
-![image](https://user-images.githubusercontent.com/97939356/178965080-0d66b97b-4761-4c01-828d-225455299e08.png)
+plt.plot(bin_edges[0:-1], histogram) # <- or here<br>
+plt.show()<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/178964931-4c5ea6de-259b-412d-b070-dd10538bf680.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178965018-e77ead41-848a-466a-9968-f36ba941608c.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/178965080-0d66b97b-4761-4c01-828d-225455299e08.png)<br>
 
 
 
