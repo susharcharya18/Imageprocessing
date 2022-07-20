@@ -401,5 +401,14 @@ output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/178965018-e77ead41-848a-466a-9968-f36ba941608c.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/178965080-0d66b97b-4761-4c01-828d-225455299e08.png)<br>
 
-
+%matplotlib inline
+import imageio
+import matplotlib.pyplot as plt
+import warnings
+import matplotlib.cbook
+warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
+pic=imageio.imread('L1.jfif')
+plt.figure(figsize=(6,6))
+plt.imshow(pic);
+plt.axis('off');
 
