@@ -401,108 +401,108 @@ output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/178965018-e77ead41-848a-466a-9968-f36ba941608c.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/178965080-0d66b97b-4761-4c01-828d-225455299e08.png)<br>
 
-Program to perform basic image data analysis using intensity transformation(Image negative,Log transformation,Gamma correction)
-%matplotlib inline
-import imageio
-import matplotlib.pyplot as plt
-import warnings
-import matplotlib.cbook
-warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
-pic=imageio.imread('L1.jfif')
-plt.figure(figsize=(6,6))
-plt.imshow(pic);
-plt.axis('off');
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180174362-09b538ca-81e8-4a02-816c-2e4fa0fdb017.png)
+Program to perform basic image data analysis using intensity transformation(Image negative,Log transformation,Gamma correction)<br>
+%matplotlib inline<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+import warnings<br>
+import matplotlib.cbook<br>
+warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)<br>
+pic=imageio.imread('L1.jfif')<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(pic);<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180174362-09b538ca-81e8-4a02-816c-2e4fa0fdb017.png)<br>
 
-negative=255-pic #neg=(L-1)-img
-plt.figure(figsize=(6,6))
-plt.imshow(negative);
-plt.axis('off');
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180174513-66ad4db9-2a03-4e21-90c3-1cc41eeb6401.png)
+negative=255-pic #neg=(L-1)-img<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(negative);<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180174513-66ad4db9-2a03-4e21-90c3-1cc41eeb6401.png)<br>
 
-%matplotlib inline
-import imageio
-import numpy as np
-import matplotlib.pyplot as plt
+%matplotlib inline<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
 
-pic=imageio.imread('LF1.jpg')
-gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114])
-gray=gray(pic)
+pic=imageio.imread('LF1.jpg')<br>
+gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114])<br>
+gray=gray(pic)<br>
 
-max_=np.max(gray)
+max_=np.max(gray)<br>
 
-def log_transform():
-    return(255/np.log(1+max_))*np.log(1+gray)
-plt.figure(figsize=(5,5))
-plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))
-plt.axis('off');
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180174661-a1a0fa97-020a-4be6-8fd4-fcff37ce2a22.png)
+def log_transform():<br>
+    return(255/np.log(1+max_))*np.log(1+gray)<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180174661-a1a0fa97-020a-4be6-8fd4-fcff37ce2a22.png)<br>
 
-import imageio
-import matplotlib.pyplot as plt
-#gamma encoding
-pic=imageio.imread('LF1.jpg')
-gamma=2.2#gamma<1~dark;gamma>~bright
-gamma_correction=((pic/255)**(1/gamma))
-plt.figure(figsize=(5,5))
-plt.imshow(gamma_correction)
-plt.axis('off');
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180174789-ebb80141-7743-45a6-a5e5-80a574fed6f6.png)
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+#gamma encoding<br>
+pic=imageio.imread('LF1.jpg')<br>
+gamma=2.2#gamma<1~dark;gamma>~bright<br>
+gamma_correction=((pic/255)**(1/gamma))<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(gamma_correction)<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180174789-ebb80141-7743-45a6-a5e5-80a574fed6f6.png)<br>
 
-Program to perform basic image manipulation (sharpness,flipping,cropping)
-#IMAGE SHARPEN
-from PIL import Image
-from PIL import ImageFilter
-import matplotlib.pyplot as plt
-#load the image
-my_image=Image.open('LF1.jpg')
-#use sharpen function
-sharp=my_image.filter(ImageFilter.SHARPEN)
-#SAVE THE IMAGE
-sharp.save('F:/image_sharpen.jpg')
-sharp.show()
-plt.imshow(sharp)
-plt.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180174908-ecc64835-f4ab-4dc2-8be6-1483e46d50d3.png)
+Program to perform basic image manipulation (sharpness,flipping,cropping)<br>
+#IMAGE SHARPEN<br>
+from PIL import Image<br>
+from PIL import ImageFilter<br>
+import matplotlib.pyplot as plt<br>
+#load the image<br>
+my_image=Image.open('LF1.jpg')<br>
+#use sharpen function<br>
+sharp=my_image.filter(ImageFilter.SHARPEN)<br>
+#SAVE THE IMAGE<br>
+sharp.save('F:/image_sharpen.jpg')<br>
+sharp.show()<br>
+plt.imshow(sharp)<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180174908-ecc64835-f4ab-4dc2-8be6-1483e46d50d3.png)<br>
 
 
-#IMAGE FLIP
-import matplotlib.pyplot as plt
-from PIL import Image
-#load the image
-img=Image.open('L1.jfif')
-plt.imshow(img)
-plt.show()
-#USE THE FLIP FUNCTION
-flip=img.transpose(Image.FLIP_LEFT_RIGHT)
-#save the image
-flip.save('F:/image_flip.jfif')
-plt.imshow(flip)
-plt.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180176530-51dbcc20-3cbb-43ac-9e0e-46a6203cae01.png)
-![image](https://user-images.githubusercontent.com/97939356/180176601-e55c93fc-e103-483b-810f-a0047671d88b.png)
+#IMAGE FLIP<br>
+import matplotlib.pyplot as plt<br>
+from PIL import Image<br>
+#load the image<br>
+img=Image.open('L1.jfif')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+#USE THE FLIP FUNCTION<br>
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)<br>
+#save the image<br>
+flip.save('F:/image_flip.jfif')<br>
+plt.imshow(flip)<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180176530-51dbcc20-3cbb-43ac-9e0e-46a6203cae01.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/180176601-e55c93fc-e103-483b-810f-a0047671d88b.png)<br>
 
-#IMAGE CROPPING
-from PIL import Image
-import matplotlib.pyplot as plt
+#IMAGE CROPPING<br>
+from PIL import Image<br>
+import matplotlib.pyplot as plt<br>
 
-im=Image.open('L1.jfif')
+im=Image.open('L1.jfif')<br>
 
-width,height=im.size
+width,height=im.size<br>
 
-im1=im.crop((50,25,175,200))
+im1=im.crop((50,25,175,200))<br>
 
-im1.show()
-plt.imshow(im1)
-plt.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/180176871-e531a1ad-4e46-498a-8648-46c3719c607a.png)
+im1.show()<br>
+plt.imshow(im1)<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/180176871-e531a1ad-4e46-498a-8648-46c3719c607a.png)<br>
 
 
 
