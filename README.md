@@ -401,6 +401,7 @@ output:<br>
 ![image](https://user-images.githubusercontent.com/97939356/178965018-e77ead41-848a-466a-9968-f36ba941608c.png)<br>
 ![image](https://user-images.githubusercontent.com/97939356/178965080-0d66b97b-4761-4c01-828d-225455299e08.png)<br>
 
+Program to perform basic image data analysis using intensity transformation(Image negative,Log transformation,Gamma correction)
 %matplotlib inline
 import imageio
 import matplotlib.pyplot as plt
@@ -452,6 +453,7 @@ plt.axis('off');
 OUTPUT:
 ![image](https://user-images.githubusercontent.com/97939356/180174789-ebb80141-7743-45a6-a5e5-80a574fed6f6.png)
 
+Program to perform basic image manipulation (sharpness,flipping,cropping)
 #IMAGE SHARPEN
 from PIL import Image
 from PIL import ImageFilter
@@ -467,6 +469,42 @@ plt.imshow(sharp)
 plt.show()
 OUTPUT:
 ![image](https://user-images.githubusercontent.com/97939356/180174908-ecc64835-f4ab-4dc2-8be6-1483e46d50d3.png)
+
+
+#IMAGE FLIP
+import matplotlib.pyplot as plt
+from PIL import Image
+#load the image
+img=Image.open('L1.jfif')
+plt.imshow(img)
+plt.show()
+#USE THE FLIP FUNCTION
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)
+#save the image
+flip.save('F:/image_flip.jfif')
+plt.imshow(flip)
+plt.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180176530-51dbcc20-3cbb-43ac-9e0e-46a6203cae01.png)
+![image](https://user-images.githubusercontent.com/97939356/180176601-e55c93fc-e103-483b-810f-a0047671d88b.png)
+
+#IMAGE CROPPING
+from PIL import Image
+import matplotlib.pyplot as plt
+
+im=Image.open('L1.jfif')
+
+width,height=im.size
+
+im1=im.crop((50,25,175,200))
+
+im1.show()
+plt.imshow(im1)
+plt.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180176871-e531a1ad-4e46-498a-8648-46c3719c607a.png)
+
+
 
 
 
