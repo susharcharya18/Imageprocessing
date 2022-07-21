@@ -451,7 +451,8 @@ plt.figure(figsize=(5,5))<br>
 plt.imshow(gamma_correction)<br>
 plt.axis('off');<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97939356/180174789-ebb80141-7743-45a6-a5e5-80a574fed6f6.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/180201095-4664a414-15f9-4d36-8351-c70454b0ac38.png)<br>
+
 
 Program to perform basic image manipulation (sharpness,flipping,cropping)<br>
 #IMAGE SHARPEN<br>
@@ -468,7 +469,7 @@ sharp.show()<br>
 plt.imshow(sharp)<br>
 plt.show()<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97939356/180174908-ecc64835-f4ab-4dc2-8be6-1483e46d50d3.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/180201011-dbd070b4-00d6-4711-9a04-aa3f8c9827ec.png)<br>
 
 
 #IMAGE FLIP<br>
@@ -485,8 +486,9 @@ flip.save('F:/image_flip.jfif')<br>
 plt.imshow(flip)<br>
 plt.show()<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97939356/180176530-51dbcc20-3cbb-43ac-9e0e-46a6203cae01.png)<br>
-![image](https://user-images.githubusercontent.com/97939356/180176601-e55c93fc-e103-483b-810f-a0047671d88b.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/180200913-14dca94a-c583-458f-afe3-439bf0a6a97a.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/180200955-79d3eb71-7f47-4824-b4c5-120313e4e3f5.png)<br>
+
 
 #IMAGE CROPPING<br>
 from PIL import Image<br>
@@ -498,7 +500,8 @@ im1.show()<br>
 plt.imshow(im1)<br>
 plt.show()<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97939356/180176871-e531a1ad-4e46-498a-8648-46c3719c607a.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/180200847-9821aa22-7da4-47ef-ad2e-f4b9d2e90335.png)<br>
+
 
 
 
