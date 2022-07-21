@@ -491,18 +491,16 @@ OUTPUT:<br>
 #IMAGE CROPPING<br>
 from PIL import Image<br>
 import matplotlib.pyplot as plt<br>
-
 im=Image.open('L1.jfif')<br>
-
 width,height=im.size<br>
-
 im1=im.crop((50,25,175,200))<br>
-
 im1.show()<br>
 plt.imshow(im1)<br>
 plt.show()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97939356/180176871-e531a1ad-4e46-498a-8648-46c3719c607a.png)<br>
+
+
 
 
 
