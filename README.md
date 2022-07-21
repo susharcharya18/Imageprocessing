@@ -411,4 +411,66 @@ pic=imageio.imread('L1.jfif')
 plt.figure(figsize=(6,6))
 plt.imshow(pic);
 plt.axis('off');
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180174362-09b538ca-81e8-4a02-816c-2e4fa0fdb017.png)
+
+negative=255-pic #neg=(L-1)-img
+plt.figure(figsize=(6,6))
+plt.imshow(negative);
+plt.axis('off');
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180174513-66ad4db9-2a03-4e21-90c3-1cc41eeb6401.png)
+
+%matplotlib inline
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+
+pic=imageio.imread('LF1.jpg')
+gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114])
+gray=gray(pic)
+
+max_=np.max(gray)
+
+def log_transform():
+    return(255/np.log(1+max_))*np.log(1+gray)
+plt.figure(figsize=(5,5))
+plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))
+plt.axis('off');
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180174661-a1a0fa97-020a-4be6-8fd4-fcff37ce2a22.png)
+
+import imageio
+import matplotlib.pyplot as plt
+#gamma encoding
+pic=imageio.imread('LF1.jpg')
+gamma=2.2#gamma<1~dark;gamma>~bright
+gamma_correction=((pic/255)**(1/gamma))
+plt.figure(figsize=(5,5))
+plt.imshow(gamma_correction)
+plt.axis('off');
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180174789-ebb80141-7743-45a6-a5e5-80a574fed6f6.png)
+
+#IMAGE SHARPEN
+from PIL import Image
+from PIL import ImageFilter
+import matplotlib.pyplot as plt
+#load the image
+my_image=Image.open('LF1.jpg')
+#use sharpen function
+sharp=my_image.filter(ImageFilter.SHARPEN)
+#SAVE THE IMAGE
+sharp.save('F:/image_sharpen.jpg')
+sharp.show()
+plt.imshow(sharp)
+plt.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/180174908-ecc64835-f4ab-4dc2-8be6-1483e46d50d3.png)
+
+
+
+
+
+
 
