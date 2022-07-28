@@ -502,132 +502,179 @@ plt.show()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97939356/180200847-9821aa22-7da4-47ef-ad2e-f4b9d2e90335.png)<br>
 
-# Python3 program for printing
-# the rectangular pattern
+from PIL import Image, ImageStat<br>
+
+im = Image.open('b4.jfif')<br>
+stat = ImageStat.Stat(im)<br>
+print(stat.stddev)<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181441681-ceaddad0-0521-424b-826c-4403f168980b.png)<br>
+<br>
+
+import cv2<br>
+import numpy as np<br>
+img=cv2.imread('b4.jfif')<br>
+cv2.imshow('b4.jfif',img)<br>
+cv2.waitKey(0)<br>
+#max_channels=np.amax([np.amax(img[:,:,0]),np.amax(img[:,:,1]),np.amax(img[:,:,2])])<br>
+#print(max_channels)
+np.max(img)<br>
+OUTPUT:<br>
+0<br>
+
+
+
+
+
+import cv2<br>
+import numpy as np<br>
+img=cv2.imread('fl1.jfif')<br>
+cv2.imshow('fl1.jfif',img)<br>
+cv2.waitKey(0)<br>
+#min_channels=np.amin([np.amin(img[:,:,0]),np.amin(img[:,:,1]),np.amin(img[:,:,2])])<br>
+#print(min_channels)<br>
+np.average(img)<br>
+OUTPUT:<br>
+178.26236885349513<br>
+
+import cv2<br>
+import numpy as np<br>
+img=cv2.imread('fl1.jfif')<br>
+cv2.imshow('fl1.jfif',img)<br>
+cv2.waitKey(0)<br>
+np.std(img)<br>
+OUTPUT:<br>
+59.692818587963856<br>
+
+
+
+
+# Python3 program for printing<br>
+# the rectangular pattern<br>
  
-# Function to print the pattern
-def printPattern(n):
+# Function to print the pattern<br>
+def printPattern(n):<br>
  
-    arraySize = n * 2 - 1;
-    result = [[0 for x in range(arraySize)]
-                 for y in range(arraySize)];
+    arraySize = n * 2 - 1;<br>
+    result = [[0 for x in range(arraySize)]<br>
+                 for y in range(arraySize)];<br>
          
-    # Fill the values
-    for i in range(arraySize):
-        for j in range(arraySize):
-            if(abs(i - (arraySize // 2)) >
-               abs(j - (arraySize // 2))):
-                result[i][j] = abs(i - (arraySize // 2));
-            else:
-                result[i][j] = abs(j - (arraySize // 2));
+    # Fill the values<br>
+    for i in range(arraySize):<br>
+        for j in range(arraySize):<br>
+            if(abs(i - (arraySize // 2))<br> >
+               abs(j - (arraySize // 2))):<br>
+                result[i][j] = abs(i - (arraySize // 2));<br>
+            else:<br>
+                result[i][j] = abs(j - (arraySize // 2));<br>
              
-    # Print the array
-    for i in range(arraySize):
-        for j in range(arraySize):
-            print(result[i][j], end = " ");
-        print("");
+    # Print the array<br>
+    for i in range(arraySize):<br>
+        for j in range(arraySize):<br>
+            print(result[i][j], end = " ");<br>
+        print("");<br>
  
-# Driver Code
-n = 4;
+# Driver Code<br>
+n = 4;<br>
  
-printPattern(n);
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/181435621-9bb5acb7-d966-4048-9814-af1fec4fbfa5.png)
+printPattern(n);<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181435621-9bb5acb7-d966-4048-9814-af1fec4fbfa5.png)<br>
 
 
-from PIL import Image
-import numpy as np
-w, h = 1000, 1000
-data = np.zeros((h, w, 3), dtype=np.uint8)
-data[0:256, 0:256] = [204, 0, 0]
-data[257:512,0:256] = [0, 255, 0]
-data[513:780, 0:256] = [0, 0, 255]
-data[781:1000, 0:256] = [0, 125, 255]
-data[0:256, 257:512] = [255, 212, 0]
-data[0:256, 513:780] = [0, 212, 56]
-data[0:256, 781:1000] = [245, 0, 56]
-data[257:512,257:512] = [24, 5, 255]
-data[257:512,513:780] = [240, 52, 255]
-data[257:512,781:1000] = [40, 252, 255]
-data[513:780,257:512] = [140, 52, 255]
-data[781:1000,257:512] = [240, 152, 255]
-data[781:1000,513:780] = [40, 152, 255]
-data[781:1000,780:1000] = [240, 152, 255]
-data[513:780,513:780] = [200, 52, 55]
-data[513:780,781:1000] = [0, 252, 155]
-img = Image.fromarray(data, 'RGB')
-img.save('b4.jfif')
-img.show()
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/181438687-5d6f8d4b-a9bf-4c10-9ca2-50f2012c670e.png)
+from PIL import Image<br>
+import numpy as np<br>
+w, h = 1000, 1000<br>
+data = np.zeros((h, w, 3), dtype=np.uint8)<br>
+data[0:256, 0:256] = [204, 0, 0]<br>
+data[257:512,0:256] = [0, 255, 0]<br>
+data[513:780, 0:256] = [0, 0, 255]<br>
+data[781:1000, 0:256] = [0, 125, 255]<br>
+data[0:256, 257:512] = [255, 212, 0]<br>
+data[0:256, 513:780] = [0, 212, 56]<br>
+data[0:256, 781:1000] = [245, 0, 56]<br>
+data[257:512,257:512] = [24, 5, 255]<br>
+data[257:512,513:780] = [240, 52, 255]<br>
+data[257:512,781:1000] = [40, 252, 255]<br>
+data[513:780,257:512] = [140, 52, 255]<br>
+data[781:1000,257:512] = [240, 152, 255]<br>
+data[781:1000,513:780] = [40, 152, 255]<br>
+data[781:1000,780:1000] = [240, 152, 255]<br>
+data[513:780,513:780] = [200, 52, 55]<br>
+data[513:780,781:1000] = [0, 252, 155]<br>
+img = Image.fromarray(data, 'RGB')<br>
+img.save('b4.jfif')<br>
+img.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181438687-5d6f8d4b-a9bf-4c10-9ca2-50f2012c670e.png)<br>
 
 
-# First import the required Python Libraries
-import numpy as np
-import matplotlib.pyplot as plt
-from skimage import img_as_uint
-from skimage.io import imshow, imread
-from skimage.color import rgb2hsv
-from skimage.color import rgb2gray
-array_1 = np.array([[255, 255,0], 
-                    [102,64, 0]])
-imshow(array_1);
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/181440461-296fc29d-2e9c-4e48-8b70-e49e0c1bae55.png)
+# First import the required Python Libraries<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+from skimage import img_as_uint<br>
+from skimage.io import imshow, imread<br>
+from skimage.color import rgb2hsv<br>
+from skimage.color import rgb2gray<br>
+array_1 = np.array([[255, 255,0], <br>
+                    [102,64, 0]])<br>
+imshow(array_1);<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181440461-296fc29d-2e9c-4e48-8b70-e49e0c1bae55.png)<br>
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-array_colors = np.array([[[245, 20, 36], 
-                         [10, 215, 30],
-                         [40, 50, 205]],
-                         [[70, 50, 10], 
-                    [25, 230, 85],
-                    [12, 128, 128]],
-                    [[25, 212, 3], 
-                    [55, 5, 250],
-                    [240, 152, 25]],
-                    ])
-plt.imshow(array_colors)
-np.max(array_colors)
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/181440768-50785dee-199b-46f5-90e4-3ce9daa83dac.png)
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+array_colors = np.array([[[245, 20, 36], <br>
+                         [10, 215, 30],<br>
+                         [40, 50, 205]],<br>
+                         [[70, 50, 10], <br>
+                    [25, 230, 85],<br>
+                    [12, 128, 128]],<br>
+                    [[25, 212, 3], <br>
+                    [55, 5, 250],<br>
+                    [240, 152, 25]],<br>
+                    ])<br>
+plt.imshow(array_colors)<br>
+np.max(array_colors)<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181440768-50785dee-199b-46f5-90e4-3ce9daa83dac.png)<br>
+
+<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+array_colors = np.array([[[245, 20, 36], <br>
+                         [10, 215, 30],<br>
+                         [40, 50, 205]],<br>
+                         [[70, 50, 10], <br>
+                    [25, 230, 85],<br>
+                    [12, 128, 128]],<br>
+                    [[25, 212, 3], <br>
+                    [55, 5, 250],<br>
+                    [240, 152, 25]],<br>
+                    ])<br>
+plt.imshow(array_colors)<br>
+np.min(array_colors)<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181440937-b14ddfc9-b960-4e44-8362-0fc5b7ed9143.png)<br>
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-array_colors = np.array([[[245, 20, 36], 
-                         [10, 215, 30],
-                         [40, 50, 205]],
-                         [[70, 50, 10], 
-                    [25, 230, 85],
-                    [12, 128, 128]],
-                    [[25, 212, 3], 
-                    [55, 5, 250],
-                    [240, 152, 25]],
-                    ])
-plt.imshow(array_colors)
-np.min(array_colors)
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/181440937-b14ddfc9-b960-4e44-8362-0fc5b7ed9143.png)
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-array_colors = np.array([[[245, 20, 36], 
-                         [10, 215, 30],
-                         [40, 50, 205]],
-                         [[70, 50, 10], 
-                    [25, 230, 85],
-                    [12, 128, 128]],
-                    [[25, 212, 3], 
-                    [55, 5, 250],
-                    [240, 152, 25]],
-                    ])
-plt.imshow(array_colors)
-np.std(array_colors)
-OUTPUT:
-![image](https://user-images.githubusercontent.com/97939356/181441053-35172757-3be8-4b39-af8f-9bbde3dfa627.png)
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+array_colors = np.array([[[245, 20, 36], <br>
+                         [10, 215, 30],<br>
+                         [40, 50, 205]],<br>
+                         [[70, 50, 10], <br>
+                    [25, 230, 85],<br>
+                    [12, 128, 128]],<br>
+                    [[25, 212, 3], <br>
+                    [55, 5, 250],<br>
+                    [240, 152, 25]],<br>
+                    ])<br>
+plt.imshow(array_colors)<br>
+np.std(array_colors)<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/181441053-35172757-3be8-4b39-af8f-9bbde3dfa627.png)<br>
 
 
 
