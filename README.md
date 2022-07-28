@@ -535,8 +535,99 @@ OUTPUT:
 ![image](https://user-images.githubusercontent.com/97939356/181435621-9bb5acb7-d966-4048-9814-af1fec4fbfa5.png)
 
 
+from PIL import Image
+import numpy as np
+w, h = 1000, 1000
+data = np.zeros((h, w, 3), dtype=np.uint8)
+data[0:256, 0:256] = [204, 0, 0]
+data[257:512,0:256] = [0, 255, 0]
+data[513:780, 0:256] = [0, 0, 255]
+data[781:1000, 0:256] = [0, 125, 255]
+data[0:256, 257:512] = [255, 212, 0]
+data[0:256, 513:780] = [0, 212, 56]
+data[0:256, 781:1000] = [245, 0, 56]
+data[257:512,257:512] = [24, 5, 255]
+data[257:512,513:780] = [240, 52, 255]
+data[257:512,781:1000] = [40, 252, 255]
+data[513:780,257:512] = [140, 52, 255]
+data[781:1000,257:512] = [240, 152, 255]
+data[781:1000,513:780] = [40, 152, 255]
+data[781:1000,780:1000] = [240, 152, 255]
+data[513:780,513:780] = [200, 52, 55]
+data[513:780,781:1000] = [0, 252, 155]
+img = Image.fromarray(data, 'RGB')
+img.save('b4.jfif')
+img.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/181438687-5d6f8d4b-a9bf-4c10-9ca2-50f2012c670e.png)
 
 
+# First import the required Python Libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage import img_as_uint
+from skimage.io import imshow, imread
+from skimage.color import rgb2hsv
+from skimage.color import rgb2gray
+array_1 = np.array([[255, 255,0], 
+                    [102,64, 0]])
+imshow(array_1);
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/181440461-296fc29d-2e9c-4e48-8b70-e49e0c1bae55.png)
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+array_colors = np.array([[[245, 20, 36], 
+                         [10, 215, 30],
+                         [40, 50, 205]],
+                         [[70, 50, 10], 
+                    [25, 230, 85],
+                    [12, 128, 128]],
+                    [[25, 212, 3], 
+                    [55, 5, 250],
+                    [240, 152, 25]],
+                    ])
+plt.imshow(array_colors)
+np.max(array_colors)
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/181440768-50785dee-199b-46f5-90e4-3ce9daa83dac.png)
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+array_colors = np.array([[[245, 20, 36], 
+                         [10, 215, 30],
+                         [40, 50, 205]],
+                         [[70, 50, 10], 
+                    [25, 230, 85],
+                    [12, 128, 128]],
+                    [[25, 212, 3], 
+                    [55, 5, 250],
+                    [240, 152, 25]],
+                    ])
+plt.imshow(array_colors)
+np.min(array_colors)
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/181440937-b14ddfc9-b960-4e44-8362-0fc5b7ed9143.png)
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+array_colors = np.array([[[245, 20, 36], 
+                         [10, 215, 30],
+                         [40, 50, 205]],
+                         [[70, 50, 10], 
+                    [25, 230, 85],
+                    [12, 128, 128]],
+                    [[25, 212, 3], 
+                    [55, 5, 250],
+                    [240, 152, 25]],
+                    ])
+plt.imshow(array_colors)
+np.std(array_colors)
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/181441053-35172757-3be8-4b39-af8f-9bbde3dfa627.png)
 
 
 
