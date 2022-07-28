@@ -656,7 +656,8 @@ array_colors = np.array([[[245, 20, 36], <br>
 plt.imshow(array_colors)<br>
 np.min(array_colors)<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97939356/181440937-b14ddfc9-b960-4e44-8362-0fc5b7ed9143.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/181444731-48fc6286-8530-45c7-8d03-48d27f5a0375.png)<br>
+
 
 
 import numpy as np<br>
