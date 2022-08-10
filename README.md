@@ -677,7 +677,28 @@ np.std(array_colors)<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97939356/181441053-35172757-3be8-4b39-af8f-9bbde3dfa627.png)<br>
 
+import matplotlib.pyplot as plt
+       
+M =    ([2, 2, 2, 2, 2],  
+        [2, 1, 1, 1, 2],  
+        [2, 1, 0, 1, 2],  
+        [2, 1, 1, 1, 2],
+        [2, 2, 2, 2, 2])  
+plt.imshow(M,cmap='magma')
+plt.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/183883903-17afc34d-0c05-4226-a6eb-1975f2f92b99.png)
 
+
+import numpy as np
+x = np.ones((5, 5))
+x[1:-1, 1:-1] = 0
+x = np.pad(x, pad_width=1, mode='constant', constant_values=2)
+print(x)
+plt.imshow(x,cmap='cividis')
+plt.show()
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97939356/183884045-dd6fada1-d0d7-447e-abe9-12144c31883e.png)
 
 
 
