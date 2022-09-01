@@ -706,5 +706,15 @@ OUTPUT:
 
 ![image](https://user-images.githubusercontent.com/97939356/187901000-769e68af-54bd-416f-a648-46842331b7aa.png)
 
-
+from skimage.segmentation import slic
+from skimage.color import label2rgb
+import matplotlib.pyplot as plt
+import numpy as np
+face_image = plt.imread('face.jpg')
+segments = slic(face_image, n_segments=400)
+segmented_image=label2rgb(segments,face_image,kind='avg')
+plt.imshow(face_image)
+plt.show()
+plt.imshow((segmented_image * 1).astype(np.uint8))
+plt.show()
 
